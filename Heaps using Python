@@ -1,0 +1,13 @@
+A = [-4, 3, 1, 0, 2, 5, 10, 8, 12, 9]
+
+import heapq
+def heapsort(arr):
+    heapq.heapify(arr)
+    n=len(arr)
+    new_list = [0]*n
+    for i in range(n):
+        minn=heapq.heappop(arr)
+        new_list[i]=minn
+    return new_list
+    
+print(heapsort(A))
