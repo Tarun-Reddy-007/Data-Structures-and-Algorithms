@@ -1,0 +1,43 @@
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.isComplete=False
+        
+class Trie:
+    def __init__(self):
+        self.root=Node()
+        
+    def insert(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char]=Node()
+            node=node.children[char]
+        node.isComplete=True
+    
+    def searchword(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                return False
+            node=node.children[char]
+        return True
+        
+    def prefix(self, startswith):
+        node=self.root
+        for char in startswith:
+            if char not in node.children:
+                return False
+            node=node.children[char]
+        return True   
+            
+if __name__=='__main__':
+    trie=Trie()
+    trie.insert("washer")
+    trie.insert("wash")
+    trie.insert("cook")
+    trie.insert("cooker")
+    
+    print(trie.searchword("wash"))
+    
+    print(trie.prefix("coo"))
