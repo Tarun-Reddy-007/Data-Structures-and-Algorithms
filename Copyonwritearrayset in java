@@ -1,0 +1,20 @@
+import java.util.concurrent.CopyOnWriteArraySet;
+
+public class CopyOnWriteArraySetExample {
+    public static void main(String[] args) {
+        CopyOnWriteArraySet<Integer> set = new CopyOnWriteArraySet<>();
+
+        // Adding elements
+        set.add(1);
+        set.add(2);
+        set.add(3);
+
+        // Removing elements
+        set.remove(2);  // Removes the element 2
+
+        // Iterating
+        for (Integer value : set) {
+            System.out.println(value);  // Prints 1 and 3
+        }
+    }
+}
