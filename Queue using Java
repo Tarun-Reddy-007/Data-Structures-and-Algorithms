@@ -12,3 +12,77 @@ public class QueueExample {
         System.out.println(queue.size);
     }
 }
+
+class MyQueue{
+private int maxsize
+private int[] queuearray;
+private int front;
+private int rear;
+private int nitems;
+
+public MyQueue(int size){
+maxsize=size;
+queuearray=new int[maxsize];
+front=0;
+rear=-1;
+nitems=0;
+}
+
+public void insert(int value){
+if(isfull()){
+System.out.println("Queue is full");
+return -1;
+}
+if(rear=maxsize-1){
+rear=-1;
+}
+queuearray[++rear]=value;
+nitems++;
+
+public int remove(){
+if(isempty()){
+System.out.println("Queue is Empty");
+return -1;
+}
+
+int temp=queuearray[front++];
+if(front==maxsize-1){
+front=0;
+}
+nitems--;
+return temp
+}
+
+public int peekfront(){
+    if (isEmpty()) {
+        System.out.println("Queue is empty");
+        return -1;
+    }
+    return queuearray[front];
+}
+
+public boolean isempty(){
+    return nitems==0;
+}
+
+public boolean isfull(){
+    return nitems==maxsize;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyQueue queue = new MyQueue(5);
+
+        queue.insert(10);
+        queue.insert(20);
+        queue.insert(30);
+        System.out.println(queue.peekFront());
+        System.out.println(queue.remove());
+    }
+}
+
+
+
+
+
+
