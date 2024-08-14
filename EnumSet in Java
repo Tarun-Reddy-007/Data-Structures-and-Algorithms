@@ -1,0 +1,16 @@
+import java.util.EnumSet;
+
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+public class EnumSetExample {
+    public static void main(String[] args) {
+        EnumSet<Day> weekend = EnumSet.of(Day.SATURDAY, Day.SUNDAY);
+        weekend.add(Day.FRIDAY);
+        System.out.println("Weekend: " + weekend);
+        for (Day day : weekend) {
+            System.out.println(day);
+        }
+    }
+}
