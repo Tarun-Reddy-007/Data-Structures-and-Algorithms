@@ -1,0 +1,25 @@
+import java.util.HashMap;
+
+public class HashMapExample{
+  public static void main(String[] args){
+    HashMap<String> hashmap = new HashMap<>();
+    hashmap.put("Apple");
+    hashmap.put("Orange");
+    hashmap.put("Banana");
+
+    if(hashmap.containsKey("Banana"){
+      System.out.println("Banana in the map");
+      }
+
+     System.out.println(hashmap.get("Apple");
+
+    hashmap.remove("Orange");
+    System.out.println("hashmap.size());
+
+    for (String key : hashmap.keySet()){
+      System.out.println(map.get(key));
+    }
+
+    hashmap.clear();
+  }
+}
