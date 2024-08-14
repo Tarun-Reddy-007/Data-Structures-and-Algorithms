@@ -1,0 +1,20 @@
+import java.util.concurrent.ConcurrentLinkedDeque;
+
+public class ConcurrentLinkedDequeExample {
+    public static void main(String[] args) {
+        ConcurrentLinkedDeque<Integer> deque = new ConcurrentLinkedDeque<>();
+
+        // Adding elements to both ends
+        deque.addFirst(1);
+        deque.addLast(2);
+
+        // Removing elements from both ends
+        System.out.println("Removed from front: " + deque.pollFirst());  // Should print 1
+        System.out.println("Removed from end: " + deque.pollLast());    // Should print 2
+
+        // Iterating
+        for (Integer value : deque) {
+            System.out.println(value);  // No elements should be printed
+        }
+    }
+}
