@@ -13,3 +13,58 @@ public class StackExample {
         System.out.println(stack.size);
     }
 }
+
+class MyStack{
+private int maxsize;
+private int[] stackarray;
+private int top;
+
+public MyStack(int size){
+maxsize=size;
+stackarray = new int[maxsize];
+top= -1;
+}
+
+public void push(int value){
+if(isfull()){
+System.out.println("Stack is full");
+return;
+}
+stackarray[++top}=value;
+}
+
+public int pop(){
+if(isempty()){
+System.out.println("Stack is empty");
+return -1;
+}
+return stackarray[top--];
+
+public int peek(){
+if(isempty()){
+System.out.println("Stack is empty");
+return -1;
+}
+return stackarray[top];
+}
+
+public boolean isempty(){
+return top==-1;
+}
+
+public boolean isfull(){
+return top==maxsize-1;
+}
+}
+
+public class Main{
+public static void main(String[] arge){
+MyStack stack = new MyStack[5];
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+System.out.println(stack.peek());
+System.out.println(stack.pop());
+}
+}
