@@ -1,0 +1,12 @@
+import java.util.BitSet;
+
+public class BitSetExample {
+    public static void main(String[] args) {
+        BitSet bitSet = new BitSet();
+        bitSet.set(0);
+        bitSet.set(3);
+        System.out.println(bitSet.get(0));
+        System.out.println(bitSet.get(1));
+        bitSet.clear(0);
+    }
+}
