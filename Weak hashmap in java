@@ -1,0 +1,18 @@
+import java.util.WeakHashMap;
+
+public class WeakHashMapExample {
+    public static void main(String[] args) {
+        WeakHashMap<String, Integer> weakHashMap = new WeakHashMap<>();
+
+        String key = new String("key");  // This will be a weak reference
+        weakHashMap.put(key, 1);
+
+        System.out.println("WeakHashMap before GC: " + weakHashMap);
+
+        key = null;  // Make the key eligible for garbage collection
+        System.gc(); // Request garbage collection
+
+        // The entry might be removed after garbage collection
+        System.out.println("WeakHashMap after GC: " + weakHashMap);
+    }
+}
