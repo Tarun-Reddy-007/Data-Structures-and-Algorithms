@@ -15,3 +15,5 @@ public class HashSetExample{
     System.out.println("hashset.size());
 
     hashset.clear();
+  }
+}
