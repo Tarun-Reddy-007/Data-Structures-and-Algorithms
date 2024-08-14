@@ -1,0 +1,20 @@
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+public class ConcurrentLinkedQueueExample {
+    public static void main(String[] args) {
+        ConcurrentLinkedQueue<Integer> queue = new ConcurrentLinkedQueue<>();
+
+        // Adding elements
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        // Removing elements
+        System.out.println("Removed: " + queue.poll());  // Should print 1
+
+        // Iterating
+        for (Integer value : queue) {
+            System.out.println(value);  // Prints remaining elements
+        }
+    }
+}
