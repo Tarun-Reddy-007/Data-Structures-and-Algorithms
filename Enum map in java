@@ -1,0 +1,17 @@
+import java.util.EnumMap;
+
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+public class EnumMapExample {
+    public static void main(String[] args) {
+        EnumMap<Day, String> enumMap = new EnumMap<>(Day.class);
+        enumMap.put(Day.MONDAY, "Start of work week");
+        enumMap.put(Day.FRIDAY, "End of work week");
+        System.out.println("Monday: " + enumMap.get(Day.MONDAY));  // Should print "Start of work week"
+        for (Day day : enumMap.keySet()) {
+            System.out.println(day + ": " + enumMap.get(day));
+        }
+    }
+}
