@@ -1,0 +1,19 @@
+import java.util.TreeSet;
+
+public class TreeSetExample{
+  public static void main(String[] args){
+    TreeSet<String> treeset = new TreeSet<>();
+    treeset.add("Apple");
+    treeset.add("Orange");
+    treeset.add("Banana");
+
+    if(treeset.contains("Banana"){
+      System.out.println("Banana in the set");
+      }
+
+    treeset.remove("Orange");
+    System.out.println("treeset.size());
+
+    treeset.clear();
+  }
+}
