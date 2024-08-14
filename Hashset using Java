@@ -1,0 +1,17 @@
+import java.util.HashSet;
+
+public class HashSetExample{
+  public static void main(String[] args){
+    Hashset<String> hashset = new HashSet<>();
+    hashset.add("Apple");
+    hashset.add("Orange");
+    hashset.add("Banana");
+
+    if(hashset.contains("Banana"){
+      System.out.println("Banana in the set");
+      }
+
+    hashset.remove("Orange");
+    System.out.println("hashset.size());
+
+    hashset.clear();
