@@ -1,0 +1,21 @@
+import java.util.IdentityHashMap;
+
+public class IdentityHashMapExample {
+    public static void main(String[] args) {
+        IdentityHashMap<String, Integer> identityHashMap = new IdentityHashMap<>();
+
+        String key1 = new String("key");
+        String key2 = new String("key");
+
+        identityHashMap.put(key1, 1);
+        identityHashMap.put(key2, 2);  // This will be considered a different key
+
+        System.out.println("Value for key1: " + identityHashMap.get(key1));  // Should print 1
+        System.out.println("Value for key2: " + identityHashMap.get(key2));  // Should print 2
+
+        // Iterating
+        for (String key : identityHashMap.keySet()) {
+            System.out.println(key + ": " + identityHashMap.get(key));
+        }
+    }
+}
