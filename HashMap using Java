@@ -17,7 +17,7 @@ public class HashMapExample{
     System.out.println("hashmap.size());
 
     for (String key : hashmap.keySet()){
-      System.out.println(map.get(key));
+      System.out.println(hashmap.get(key));
     }
 
     hashmap.clear();
