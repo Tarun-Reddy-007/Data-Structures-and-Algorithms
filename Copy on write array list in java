@@ -1,0 +1,20 @@
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class CopyOnWriteArrayListExample {
+    public static void main(String[] args) {
+        CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
+
+        // Adding elements
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        // Removing elements
+        list.remove(1);  // Removes the element 2
+
+        // Iterating
+        for (Integer value : list) {
+            System.out.println(value);  // Prints 1 and 3
+        }
+    }
+}
