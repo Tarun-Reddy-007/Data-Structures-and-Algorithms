@@ -1,0 +1,56 @@
+import java.util.LinkedList;
+
+class Graph{
+    int numvertices;
+    LinkedList<Integer>[] adlist;
+    
+    Graph(int numvertices){
+        this.numvertices=numvertices;
+        this.adlist = new LinkedList[5];
+        
+        for(int i = 0; i < numvertices; i++){
+            adlist[i] = new LinkedList<>();
+        }
+    }
+    
+    void insert(int src, int des){
+        adlist[src].add(des);
+    }
+    
+    void dfs(int vertex){
+        boolean[] visited = new boolean[numvertices];
+        dfsrec(vertex, visited);
+    }
+    
+    void dfsrec(int vertex, boolean[] visited){
+        visited[vertex] = true;
+        System.out.print(vertex + " --> ");
+        
+        for(int vertexcur : adlist[vertex]){
+            if(!visited[vertexcur]){
+                dfsrec(vertexcur, visited);
+            }
+        }
+    }
+    public static void main(String[] args){
+        Graph graph = new Graph(5);
+        
+        graph.insert(0,1);
+        graph.insert(0,2);
+        graph.insert(0,3);
+        graph.insert(1,2);
+        graph.insert(1,4);
+        graph.insert(2,3);
+        graph.insert(3,1);
+        graph.insert(3,4);
+        graph.insert(4,2);
+        
+        graph.dfs(0);
+    }
+}
+
+//output
+
+/*
+0 --> 1 --> 2 --> 3 --> 4 --> 
+*/
